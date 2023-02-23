@@ -85,3 +85,48 @@ for benchmark in benchmark_list.values():
         end = time.time()
         print(f"{benchmark.__name__} with {'gpu' if gpu_available else 'no_gpu'}: {end - start} seconds")
         print("="*10)
+
+'''
+apply_rgb2gray benchmark
+==========
+apply_rgb2gray with gpu: 38.2649507522583 seconds
+==========
+apply_rgb2gray with no_gpu: 48.634881019592285 seconds
+==========
+
+apply_rgb2hsv benchmark
+==========
+apply_rgb2hsv with gpu: 38.00744414329529 seconds
+==========
+apply_rgb2hsv with no_gpu: 231.91903972625732 seconds
+==========
+
+apply_gaussian benchmark
+==========
+apply_gaussian with gpu: 38.130988121032715 seconds
+==========
+apply_gaussian with no_gpu: 281.2401978969574 seconds
+
+==========
+apply_equalize_hist benchmark
+==========
+apply_equalize_hist with gpu: 40.849740743637085 seconds
+==========
+apply_equalize_hist with no_gpu: 134.53890371322632 seconds
+
+==========
+apply_canny benchmark
+==========
+apply_canny with gpu: 39.090564250946045 seconds
+==========
+apply_canny with no_gpu: 281.1434905529022 seconds
+
+==========
+apply_sobel benchmark
+==========
+apply_sobel with gpu: 35.74287939071655 seconds
+==========
+apply_sobel with no_gpu: 264.8947470188141 seconds
+==========
+
+'''
