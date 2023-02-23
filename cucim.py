@@ -72,3 +72,16 @@ benchmark_list = {'rgb2gray': apply_rgb2gray, 'rgb2hsv': apply_rgb2hsv, 'gaussia
 # gpu n no gpu
 gpu_available = [True, False]
 
+# benchmark function
+# run benchmark for each function
+for benchmark in benchmark_list.values():
+    print(f"{benchmark.__name__} benchmark")
+    print("="*10)
+    for gpu_available in [True, False]:
+        start = time.time()
+        for image_name in image_list:
+            image = skimage.io.imread(image_folder + image_name)
+            image = benchmark(image, cuda=gpu_available)
+        end = time.time()
+        print(f"{benchmark.__name__} with {'gpu' if gpu_available else 'no_gpu'}: {end - start} seconds")
+        print("="*10)
